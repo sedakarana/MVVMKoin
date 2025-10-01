@@ -25,8 +25,6 @@ import todoapp.composeapp.generated.resources.compose_multiplatform
 @Preview
 fun App() {
     MaterialTheme {
-        KoinContext {
-            MainNavigation()
-        }
+        MainNavigation()
     }
 }

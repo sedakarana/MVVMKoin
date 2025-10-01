@@ -28,6 +28,7 @@ import com.sedakarana.todoapp.data.entity.TodoData
 import com.sedakarana.todoapp.ui.theme.getFontBold
 import com.sedakarana.todoapp.ui.theme.getFontMedium
 import com.sedakarana.todoapp.ui.theme.getFontRegular
+import com.sedakarana.todoapp.ui.viewmodel.AddViewModel
 import com.sedakarana.todoapp.ui.viewmodel.DetailViewModel
 import org.jetbrains.compose.resources.painterResource
 import org.koin.compose.viewmodel.koinViewModel
@@ -38,7 +39,7 @@ import todoapp.composeapp.generated.resources.back
 @Composable
 fun DetailScreen(
     navController: NavController,
-    detailViewModel: DetailViewModel = koinViewModel<DetailViewModel>(),
+    detailViewModel: DetailViewModel =   viewModel { DetailViewModel() },
     todoData: TodoData
 ) {
 

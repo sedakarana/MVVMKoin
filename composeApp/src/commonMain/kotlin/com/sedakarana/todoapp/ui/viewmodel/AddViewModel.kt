@@ -8,8 +8,8 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.launch
 
-class AddViewModel(var todoRepository: TodoRepository) : ViewModel() {
-
+class AddViewModel : ViewModel() {
+    var todoRepository = TodoRepository()
 
     fun save(title: String) {
         CoroutineScope(kotlinx.coroutines.Dispatchers.Main).launch {

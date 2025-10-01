@@ -2,7 +2,8 @@ package com.sedakarana.todoapp.data.repo
 
 import com.sedakarana.todoapp.data.datasource.TodoDataSource
 
-class TodoRepository(var todoDataSource: TodoDataSource) {
+class TodoRepository() {
+    var todoDataSource = TodoDataSource()
     suspend fun search(text: String) = todoDataSource.search(text)
 
     suspend fun updateStatus(id: Int) = todoDataSource.updateStatus(id)

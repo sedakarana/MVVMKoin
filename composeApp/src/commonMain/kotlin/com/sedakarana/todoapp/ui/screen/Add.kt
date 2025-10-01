@@ -35,7 +35,7 @@ import todoapp.composeapp.generated.resources.back
 @Composable
 fun AddScreen(
     navController: NavController,
-    addViewModel: AddViewModel = koinViewModel<AddViewModel>()
+    addViewModel: AddViewModel = viewModel { AddViewModel() }
 ) {
     val title = remember { mutableStateOf("") }
 

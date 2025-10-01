@@ -42,6 +42,7 @@ import com.sedakarana.todoapp.ui.theme.colorRed
 import com.sedakarana.todoapp.ui.theme.colorWhite
 import com.sedakarana.todoapp.ui.theme.getFontBold
 import com.sedakarana.todoapp.ui.theme.getFontRegular
+import com.sedakarana.todoapp.ui.viewmodel.AddViewModel
 import com.sedakarana.todoapp.ui.viewmodel.MainViewModel
 import kotlinx.serialization.json.Json
 import org.jetbrains.compose.resources.painterResource
@@ -58,7 +59,7 @@ import todoapp.composeapp.generated.resources.uncheck
 @Composable
 fun MainScreen(
     navController: NavController,
-    viewModel: MainViewModel = koinViewModel<MainViewModel>()
+    viewModel: MainViewModel = viewModel { MainViewModel() }
 ) {
     val todoList = viewModel.todoList.collectAsState()
     var search = remember { mutableStateOf("") }

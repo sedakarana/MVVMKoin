@@ -26,13 +26,11 @@ class TodoDataSource {
         val todoList = ArrayList<TodoData>()
         val detail = TodoData(1, "Mail Atılacak", false)
         val detail1 = TodoData(2, "Çiçekler Sulanacak", true)
-        val detail2 = TodoData(3, "Göktürk Okuldan Alınacak", false)
         val detail3 = TodoData(4, "Kitap Okunacak", false)
         val detail4 = TodoData(5, "Markete Gidilecek", true)
         val detail5 = TodoData(6, "Çarşaflar Değiştirilecek", false)
         todoList.add(detail)
         todoList.add(detail1)
-        todoList.add(detail2)
         todoList.add(detail3)
         todoList.add(detail4)
         todoList.add(detail5)
@@ -41,9 +39,7 @@ class TodoDataSource {
     suspend fun search(text: String) : List<TodoData> = withContext(Dispatchers.IO){
         val todoList = ArrayList<TodoData>()
         val detail = TodoData(1, "Mail Atılacak", false)
-        val detail2 = TodoData(3, "Göktürk Okuldan Alınacak", false)
         todoList.add(detail)
-        todoList.add(detail2)
         return@withContext todoList
     }
 
