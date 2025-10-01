@@ -6,8 +6,7 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-class DetailViewModel: ViewModel() {
-    var todoRepository = TodoRepository()
+class DetailViewModel(val todoRepository: TodoRepository) : ViewModel() {
 
     fun update(id: Int, title: String, status: Boolean) {
         CoroutineScope(Dispatchers.Main).launch {

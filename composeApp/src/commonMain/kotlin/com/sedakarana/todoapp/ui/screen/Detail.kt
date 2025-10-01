@@ -39,8 +39,8 @@ import todoapp.composeapp.generated.resources.back
 @Composable
 fun DetailScreen(
     navController: NavController,
-    detailViewModel: DetailViewModel =   viewModel { DetailViewModel() },
-    todoData: TodoData
+    todoData: TodoData,
+    viewModel: DetailViewModel =  koinViewModel<DetailViewModel>()
 ) {
 
     val title = remember { mutableStateOf("") }
@@ -88,7 +88,7 @@ fun DetailScreen(
                 )
             })
 
-            Button(onClick = { detailViewModel.update(todoData.id, title.value, todoData.isCompleted) }) {
+            Button(onClick = { viewModel.update(todoData.id, title.value, todoData.isCompleted) }) {
                 Text(
                     "GÜNCELLE",
                     fontSize = 16.sp,

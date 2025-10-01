@@ -8,9 +8,8 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.launch
 
-class MainViewModel : ViewModel() {
+class MainViewModel(val todoRepository: TodoRepository) : ViewModel() {
     var todoList = MutableStateFlow<List<TodoData>>(listOf())
-    var todoRepository = TodoRepository()
 
     fun search(text: String) {
         CoroutineScope(Dispatchers.Main).launch {

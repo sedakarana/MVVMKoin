@@ -57,10 +57,7 @@ import todoapp.composeapp.generated.resources.uncheck
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun MainScreen(
-    navController: NavController,
-    viewModel: MainViewModel = viewModel { MainViewModel() }
-) {
+fun MainScreen(navController: NavController, viewModel: MainViewModel = koinViewModel<MainViewModel>()) {
     val todoList = viewModel.todoList.collectAsState()
     var search = remember { mutableStateOf("") }
     var searchStatus = remember { mutableStateOf(false) }

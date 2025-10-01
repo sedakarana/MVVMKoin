@@ -22,27 +22,25 @@ class TodoDataSource {
         println("Görev Kaydedildi: $title")
     }
 
-    suspend fun loadAll() : List<TodoData> = withContext(Dispatchers.IO){
+    suspend fun loadAll(): List<TodoData> = withContext(Dispatchers.IO) {
         val todoList = ArrayList<TodoData>()
         val detail = TodoData(1, "Mail Atılacak", false)
-        val detail1 = TodoData(2, "Çiçekler Sulanacak", true)
+        val detail1 = TodoData(2, "Anneme Hediye Yollanacak", true)
         val detail3 = TodoData(4, "Kitap Okunacak", false)
         val detail4 = TodoData(5, "Markete Gidilecek", true)
-        val detail5 = TodoData(6, "Çarşaflar Değiştirilecek", false)
         todoList.add(detail)
         todoList.add(detail1)
         todoList.add(detail3)
         todoList.add(detail4)
-        todoList.add(detail5)
         return@withContext todoList
     }
-    suspend fun search(text: String) : List<TodoData> = withContext(Dispatchers.IO){
+
+    suspend fun search(text: String): List<TodoData> = withContext(Dispatchers.IO) {
         val todoList = ArrayList<TodoData>()
         val detail = TodoData(1, "Mail Atılacak", false)
         todoList.add(detail)
         return@withContext todoList
     }
-
 
 
 }

@@ -34,8 +34,8 @@ import todoapp.composeapp.generated.resources.back
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun AddScreen(
-    navController: NavController,
-    addViewModel: AddViewModel = viewModel { AddViewModel() }
+    navController: NavController, viewModel: AddViewModel = koinViewModel<AddViewModel>()
+
 ) {
     val title = remember { mutableStateOf("") }
 
@@ -79,7 +79,7 @@ fun AddScreen(
             })
 
             Button(onClick = {
-                addViewModel.save(title.value)
+                viewModel.save(title.value)
             }) {
                 Text(
                     "KAYDET",
