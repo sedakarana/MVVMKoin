@@ -1,4 +1,5 @@
 This is a Kotlin Multiplatform project targeting Android, iOS.
+<img width="1346" height="1264" alt="Ekran Resmi 2025-10-02 11 57 31" src="https://github.com/user-attachments/assets/ad4c08e6-3d94-4a4c-b92e-d3964db8df4e" />
 
 * [/composeApp](./composeApp/src) is for code that will be shared across your Compose Multiplatform applications.
   It contains several subfolders:
